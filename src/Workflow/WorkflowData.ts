@@ -4,11 +4,12 @@ import { Point } from '../Canvas/Models/Point';
 import { generateId } from '../Canvas/Util/Utils';
 import { SerializedWorkflow } from '../Workflow/Types';
 import { State } from './Types';
+import { v4 as uuidv4 } from 'uuid';
 
 export class WorkflowData {
   static loadState(jsonWorkflow: SerializedWorkflow, options) {
     const state: State = {
-      id: jsonWorkflow.id || generateId(),
+      id: jsonWorkflow.id || uuidv4(),
       workflowName: jsonWorkflow.name || 'Workflow',
       workflowDescription: jsonWorkflow.description || 'Generic workflow',
       nodes: [],

@@ -1,10 +1,11 @@
 import { IconLibrary } from "../Assets/icon-library";
 import { generateId } from "../Util/Utils";
 import { Point } from "./Point";
+import { v4 as uuidv4 } from 'uuid';
 
 export class Node {
   public name: string = "Node";
-  public id: string = generateId()
+  public id: string = uuidv4();
   public icon: string;
   public position: Point = new Point();
   public selected: boolean = false;

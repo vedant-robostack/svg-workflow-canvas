@@ -1,4 +1,5 @@
 import { Node } from './Node';
+import { v4 as uuidv4 } from 'uuid';
 
 export class Connection {
   public id: string = '0';
@@ -9,7 +10,7 @@ export class Connection {
   constructor(from: Node, to: Node, id?: string) {
     this.from = from;
     this.to = to;
-    this.id = id ? id : Math.random() + '';
+    this.id = id ? id : uuidv4() + '';
   }
 
   clone() {
