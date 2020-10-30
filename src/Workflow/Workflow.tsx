@@ -55,7 +55,7 @@ export const Workflow: FunctionComponent<WorkflowProps> = ({
   };
 
   const addNode = node => {
-    insertNode(node.name);
+    insertNode(node);
   };
   const saveWorkflow = () => {
     return WorkflowData.export(state);
